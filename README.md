@@ -8,31 +8,37 @@ To write a program to implement the the Logistic Regression Model to Predict the
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Import the required packages and print the present data.
-2. Print the placement data and salary data.
-3. Find the null and duplicate values. 
-4. Using logistic regression find the predicted values of accuracy , confusion matrices.
-5. Display the results.
+1.Use the standard libraries in python for finding linear regression.
 
+2.Set variables for assigning dataset values.
 
+3.Import linear regression from sklearn.
+
+4.Predict the values of array.
+
+5.Calculate the accuracy, confusion and classification report by importing the required modules from sklearn.
+
+6.Obtain the graph. 
 ## Program:
 ```
-## Developed by: GOWRISANKAR P
-## RegisterNumber: 212222230041
-
+Program to implement the the Logistic Regression Model to Predict the Placement Status of Student.
+Developed by: GOWRISANKAR P
+RegisterNumber:212222230041
+```
+```
 import pandas as pd
-data=pd.read_csv("Placement_Data.csv")
+data=pd.read_csv("C:/Users/SEC/Downloads/Placement_Data.csv")
 data.head()
 
 data1=data.copy()
-data1=data1.drop(["sl_no","salary"],axis=1)#Browses the specified row or column
+data1=data1.drop(["sl_no","salary"],axis=1)
 data1.head()
 
-data1.isnull().sum()
+data1.isnull()
 
 data1.duplicated().sum()
 
-from sklearn.preprocessing import LabelEncoder
+from sklearn .preprocessing import LabelEncoder
 le=LabelEncoder()
 data1["gender"]=le.fit_transform(data1["gender"])
 data1["ssc_b"]=le.fit_transform(data1["ssc_b"])
@@ -40,9 +46,9 @@ data1["hsc_b"]=le.fit_transform(data1["hsc_b"])
 data1["hsc_s"]=le.fit_transform(data1["hsc_s"])
 data1["degree_t"]=le.fit_transform(data1["degree_t"])
 data1["workex"]=le.fit_transform(data1["workex"])
-data1["specialisation"]=le.fit_transform(data1["specialisation"] )     
-data1["status"]=le.fit_transform(data1["status"])       
-data1 
+data1["specialisation"]=le.fit_transform(data1["specialisation"])
+data1["status"]=le.fit_transform(data1["status"])
+data1
 
 x=data1.iloc[:,:-1]
 x
@@ -63,65 +69,25 @@ from sklearn.metrics import accuracy_score
 accuracy=accuracy_score(y_test,y_pred)
 accuracy
 
-from sklearn.metrics import confusion_matrix
-confusion=confusion_matrix(y_test,y_pred)
-confusion
-
 from sklearn.metrics import classification_report
-classification_report1 = classification_report(y_test,y_pred)
+classification_report1=classification_report(y_test,y_pred)
 print(classification_report1)
 
 lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
-
-
 ```
+
 ## Output:
-## Placement Data:
+![image](https://github.com/user-attachments/assets/eddbbf66-eafa-49c3-9a76-193be1dcc867)
+![image](https://github.com/user-attachments/assets/cba53113-512c-4269-81d3-c88315c775f4)
+![image](https://github.com/user-attachments/assets/e7453f9b-9fcb-4df2-9bbf-da428eead764)
+![image](https://github.com/user-attachments/assets/c8fc4560-841d-4ce6-b78f-61d30b9b34f6)
+![image](https://github.com/user-attachments/assets/c0531ee8-ccd1-41b0-8cbc-03e1b177f308)
+![image](https://github.com/user-attachments/assets/d4cf7bb4-8688-480a-a214-5c56f8519c2f)
+![image](https://github.com/user-attachments/assets/33cd2aa6-c590-40b4-a804-a74bc8c52681)
+![image](https://github.com/user-attachments/assets/6b4e25a1-c9ed-4b94-a2ed-ffb00d98b80e)
 
-![data](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/cba641d7-4b64-474a-9df3-f8047b4ddc21)
-
-## Salary Data:
-
-![salarydata](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/b69592e3-fb46-446d-87a4-60e8dabf45a1)
-
-## Checking the null() function:
-
-
-![null](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/196a08f0-0571-40f2-bfdf-b6e1d2b4fa8f)
-
-## Data Duplicate:
-
-
-![duplicate](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/3efb2a8c-6c60-4466-99b2-2c3c7b7a39b4)
-
-## Print Data:
-
-![dataprint](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/37d05f23-2187-49d2-a871-7dbf5d7baca9)
-
-
-## Data-Status:
-
-![datastatus](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/d0b24ebb-4d7a-4956-b6e5-b87f65ccbeeb)
-
-## Y_prediction array:
-![ypredict](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/81a5cd80-1fa0-48d8-a838-567b6e7a6676)
-
-## Accuracy value:
-![accuracy](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/1ca21819-8baa-4312-aae8-1b094fe75ea6)
-
-## Confusion array:
-
-![confusion](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/675efabe-006d-463a-b5f0-0cc4354ca37a)
-
-## Classification Report:
-
-
-![cr](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/be3ab929-d71c-492a-8adc-9a054cf08983)
-
-
-## Prediction of LR:
-![lrpredict](https://github.com/charumathiramesh/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/assets/120204455/295b82c5-385c-4832-9d92-282a651946cb)
-
+![image](https://github.com/user-attachments/assets/5e1d09bb-4d1a-4229-aaad-61dd6ff61670)
+![image](https://github.com/user-attachments/assets/d30453a5-c2dd-4f82-9882-8d23ab088955)
 
 ## Result:
 Thus the program to implement the the Logistic Regression Model to Predict the Placement Status of Student is written and verified using python programming.
